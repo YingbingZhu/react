@@ -1,17 +1,34 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import zyb from './image/zyb.jpg'
+import SingleComment from './SingleComment'
+import UserCard from './UserCard'
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+const App = () => {
+    return(
+        <div className='ui comments'>
+            <UserCard>
+                <SingleComment 
+                    name = 'yb' 
+                    date='Today at 5'
+                    text='hi'
+                />
+            </UserCard>
+            <SingleComment 
+                name = 'yb1' 
+                date='Today at 6'
+                text='hi3'
+            />
+            <SingleComment 
+                name = 'yb2' 
+                date='Today at 7'
+                text='hi2'
+            />
+        </div>
+    )
+}
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+ReactDOM.render(
+    <App />,
+    document.querySelector('#root')
+)
